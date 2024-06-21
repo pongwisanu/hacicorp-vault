@@ -27,21 +27,21 @@
 
 > cd ..
 > 
-> cat <<EOF | tee config/vautl.hcl
-> storage "raft" {
->  path    = "/vault/data"
->  node_id = "node1"
-> }
-> listener "tcp" {
->  address       = "0.0.0.0:8200"
->  tls_cert_file = "/vault/tls/tls.crt"
->  tls_key_file  = "/vault/tls/tls.key"
-> }
-> disable_mlock = true
-> api_addr = "http://127.0.0.1:8200"
-> cluster_addr = "https://127.0.0.1:8201"
-> ui = true
-> EOF
+> cat <<EOF | tee config/vautl.hcl <br>
+> storage "raft" { <br>
+>   path    = "/vault/data" <br>
+>   node_id = "node1" <br>
+> } <br>
+> listener "tcp" { <br>
+>  address       = "0.0.0.0:8200" <br>
+>  tls_cert_file = "/vault/tls/tls.crt" <br>
+>  tls_key_file  = "/vault/tls/tls.key" <br>
+> } <br>
+> disable_mlock = true <br>
+> api_addr = "http://127.0.0.1:8200" <br>
+> cluster_addr = "https://127.0.0.1:8201" <br>
+> ui = true <br>
+> EOF <br>
 
 ## 4. Create container
 
