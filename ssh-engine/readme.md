@@ -1,19 +1,19 @@
 # Create cert for SSH
 
-"<something>" is your input
+```<something>``` is your input
 
 ## 1. Create secrets engine
 > ```vault login <token>```
 >
-> ```vault secrets enable -path=<secret engine name> ssh```
+> ```vault secrets enable -path=<secret_engine_name> ssh```
 > exp. ```vault secrets enable -path=ssh-sign ssh```
 
 ## 2. Create Key pair for CA
 > ```mkdir pki```
 >
-> ```vault write <secret engine name>/config/ca generate_signing_key=true```
+> ```vault write <secret_engine_name>/config/ca generate_signing_key=true```
 >
-> ```vault read -field=public_key <secret engine name>/config/ca > pki/trusted-user-ca-keys.pem```
+> ```vault read -field=public_key <secret_engine_name>/config/ca > pki/trusted-user-ca-keys.pem```
 >
 
 ## 3. Copy key to server that want to ssh
@@ -27,7 +27,7 @@
 
 ## 4. Create role ()
 > ```
-> vault write <secret engine name>r/roles/<role name> - <<EOF
+> vault write <secret_engine_name>/roles/<role_name> - <<EOF
 > {
 >    "algorithm_signer": "rsa-sha2-256",
 >    "allow_user_certificates": true,
@@ -47,8 +47,7 @@
 >
 > ```ssh-keygen -t ed25519 -N "" -C "<user>" -f pki/<user>```
 >
-> ```vault write -field=signed_key <secret engine name>/sign/<role name> \
-                    public_key=@pki/<user>.pub  > pki/<user>-cert.pub```
+> ```vault write -field=signed_key <secret_engine_name>/sign/<role_name> \ public_key=@pki/<user>.pub  > pki/<user>-cert.pub```
 
 
 ## 6. try login
