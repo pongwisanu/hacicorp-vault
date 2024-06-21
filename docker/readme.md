@@ -27,7 +27,7 @@
 
 > cd ..
 > 
-> cat <<EOF | tee config/vautl.hcl <br>
+> cat <<EOF | tee config/vault.hcl <br>
 > storage "raft" { <br>
 >   path    = "/vault/data" <br>
 >   node_id = "node1" <br>
