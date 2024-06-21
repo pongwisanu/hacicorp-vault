@@ -45,11 +45,11 @@
 
 ## 4. Create container
 
-> docker container run --cap-add=IPC_LOCK -d -p 127.0.0.1:8200:8200 -v $(pwd)/config:/vault/config -v $(pwd)/data:/vault/data -v $(pwd)/logs:/vault/logs  -v $(pwd)/tls:/vault/tls --rm --name  myvault vault server
-> or 
-> use docker compose file
+> docker container run --cap-add=IPC_LOCK -d -p 127.0.0.1:8200:8200 -v $(pwd)/config:/vault/config -v $(pwd)/data:/vault/data -v $(pwd)/logs:/vault/logs  -v $(pwd)/tls:/vault/tls --rm --name  myvault vault server <br>
+> or  <br>
+> use docker compose file <br>
 >
-> **Warnning**
+> **Warnning** <br>
 > may be get some error with file permission
 
 ## 5. Install **Vault** in client to connect to container
