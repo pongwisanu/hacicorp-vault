@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  vault:
+    container_name: hachicorp_vault
+    image: hashicorp/vault:1.17
+    command: vault server -config /vault/config
+    ports:
+      - 8200:8200
+    cap_add:
+      - IPC_LOCK
+    volumes:
+      - ./config:/vault/config
+      - ./data:/vault/data
+      - ./logs:/vault/logs
+      - ./tls:/vault/tls
+    restart: always
