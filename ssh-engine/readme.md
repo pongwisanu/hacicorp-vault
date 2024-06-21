@@ -37,8 +37,8 @@
 >        "permit-pty": ""
 >    },
 >    "key_type": "ca",
->    "default_user": "<user>" or Null,
->    "ttl": "30m0s" # if don't want it remove it
+>    "default_user": "<user>" or delete if don't want it,
+>    "ttl": "30m0s" # delete if don't want it
 >    }
 > EOF 
 > ```
@@ -51,3 +51,4 @@
 
 
 ## 6. try login
+> ```ssh -i pki/<user>-cert.pub -i pki/<user> <user>@<ip/domain> ```
