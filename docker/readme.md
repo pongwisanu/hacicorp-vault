@@ -50,7 +50,7 @@
 > use docker compose file <br>
 >
 > **Warnning** <br>
-> may be get some error with file permission
+> might get some error with file permission
 
 ## 5. Install **Vault** in client to connect to container
 
