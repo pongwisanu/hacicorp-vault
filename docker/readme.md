@@ -3,7 +3,7 @@
 ## 1. Create required directory
 > mkdir config data logs tls
 
-## 2. Create key pair for #Vault#
+## 2. Create key pair for **Vault**
 > cd tls
 
 > openssl genrsa -out ca.key 2048
@@ -22,4 +22,4 @@
 
 > openssl x509 -req -in tls.csr -CAkey ca.key -CA ca.crt -out tls.crt -CAcreateserial -extfile server1.cnf
 
-## 3. Config Vault server 
+## 3. Config **Vault** server 
